@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprawdź czy możesz wyzerować długi — Kancelaria Nowacka & Górnicki</title>
+<meta name="description" content="Dowiedz się w 2 minuty, czy możesz legalnie wyzerować swoje długi. Anonimowa analiza, bez kosztów, bez zobowiązań. Upadłość konsumencka z kancelarią Nowacka & Górnicki.">
+<meta property="og:title" content="Sprawdź czy możesz wyzerować długi — bezpłatna analiza w 2 minuty">
+<meta property="og:description" content="Anonimowa analiza Twojej sytuacji. Bez kosztów. Bez prawniczej mowy. Zero zobowiązań.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================ */
+/* RESET & GLOBALS                              */
+/* ============================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ivory:       #FAF8F5;
+  --parchment:   #F2EDE6;
+  --mist:        #E8E4DF;
+  --slate:       #4A4A4A;
+  --graphite:    #2C2C2C;
+  --navy:        #1B365D;
+  --navy-deep:   #122442;
+  --navy-light:  #2A4A78;
+  --sage:        #6B8F71;
+  --sage-bg:     #eef5f0;
+  --amber:       #C4913C;
+  --amber-bg:    #fdf5ec;
+  --info-bg:     #edf1f8;
+  --red-accent:  #B8533E;
+  --red-bg:      #fdf0ed;
+
+  --shadow:    0 1px 3px rgba(27,54,93,.06), 0 6px 16px rgba(27,54,93,.04);
+  --shadow-lg: 0 4px 12px rgba(27,54,93,.08), 0 16px 40px rgba(27,54,93,.06);
+  --radius:    6px;
+  --radius-lg: 10px;
+
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
+  --ff-body:    'DM Sans', system-ui, sans-serif;
+  --transition: 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+html{
+  font-size:16px;
+  scroll-behavior:smooth;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  scrollbar-gutter:stable;
+}
+
+::selection{background:#1B365D;color:#FAF8F5}
+*:focus:not(:focus-visible){outline:none}
+*:focus-visible{outline:2px solid #1B365D;outline-offset:2px}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:3px}
+
+body{
+  font-family:var(--ff-body);
+  color:var(--slate);
+  background:var(--ivory);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ============================================ */
+/* UTILITY                                      */
+/* ============================================ */
+.container{max-width:1152px;margin:0 auto;padding:0 20px}
+.container-prose{max-width:680px;margin:0 auto;padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ============================================ */
+/* REVEAL ANIMATION                             */
+/* ============================================ */
+.reveal{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .6s cubic-bezier(.25,.1,.25,1),
+             transform .6s cubic-bezier(.25,.1,.25,1);
+}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+.reveal-stagger>.reveal:nth-child(1){transition-delay:0s}
+.reveal-stagger>.reveal:nth-child(2){transition-delay:.1s}
+.reveal-stagger>.reveal:nth-child(3){transition-delay:.12s}
+.reveal-stagger>.reveal:nth-child(4){transition-delay:.2s}
+.reveal-stagger>.reveal:nth-child(5){transition-delay:.25s}
+.reveal-stagger>.reveal:nth-child(6){transition-delay:.3s}
+.reveal-stagger>.reveal:nth-child(7){transition-delay:.35s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============================================ */
+/* TOP BAR (logo only — lead magnet page)       */
+/* ============================================ */
+.top-bar{
+  position:sticky;top:0;z-index:50;
+  padding:16px 0;
+  background:rgba(250,248,245,.95);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(27,54,93,.05);
+}
+.top-bar .container{display:flex;align-items:center}
+.logo{
+  font-family:var(--ff-display);
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--graphite);
+  letter-spacing:-.01em;
+  text-decoration:none;
+}
+.logo span{color:var(--navy)}
+
+/* ============================================ */
+/* HERO (Pattern A — Full-Bleed)                */
+/* ============================================ */
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:64px 20px;
+  background:var(--ivory);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(27,54,93,.03) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--navy);background:rgba(27,54,93,.06);
+  padding:8px 16px;border-radius:24px;margin-bottom:32px;
+}
+.hero-badge svg{width:14px;height:14px;fill:var(--navy)}
+.hero h1{
+  font-family:var(--ff-display);
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:700;line-height:1.1;
+  color:var(--graphite);
+  margin-bottom:16px;letter-spacing:-.01em;
+}
+.hero h1 em{font-style:normal;color:var(--navy)}
+.hero-sub{
+  font-size:1.05rem;color:var(--slate);line-height:1.65;
+  max-width:520px;margin:0 auto 40px;
+}
+
+/* HERO METRICS */
+.hero-metrics{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:32px;
+  margin-bottom:40px;
+}
+.hero-metric{text-align:center}
+.hero-metric .hm-value{
+  font-family:var(--ff-display);font-size:1.75rem;font-weight:700;
+  color:var(--navy);line-height:1.1;
+}
+.hero-metric .hm-label{
+  font-size:.78rem;color:var(--slate);margin-top:4px;
+}
+.hero-metric .hm-check{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.7rem;color:var(--sage);font-weight:600;margin-top:2px;
+}
+.hero-metric .hm-check svg{width:12px;height:12px;fill:var(--sage)}
+
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-body);font-size:1rem;font-weight:600;
+  color:var(--ivory);background:var(--navy);
+  padding:16px 32px;border-radius:var(--radius);border:none;cursor:pointer;
+  box-shadow:0 2px 8px rgba(27,54,93,.2);
+  transition:all var(--transition);text-decoration:none;
+  min-height:48px;
+}
+.hero-cta:hover{background:var(--navy-deep);transform:translateY(-1px);box-shadow:0 4px 16px rgba(27,54,93,.25)}
+.hero-cta:active{transform:translateY(0)}
+.hero-cta svg{width:18px;height:18px;fill:currentColor;transition:transform var(--transition)}
+.hero-cta:hover svg{transform:translateX(3px)}
+.hero-cta-sub{
+  display:block;margin-top:12px;font-size:.78rem;color:var(--slate);
+}
+
+.hero-trust{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:24px;
+  margin-top:48px;padding-top:32px;
+  border-top:1px solid rgba(27,54,93,.08);
+}
+.hero-trust-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:.85rem;color:var(--slate);font-weight:400;
+}
+.hero-trust-item svg{width:16px;height:16px;fill:var(--navy);flex-shrink:0;opacity:.7}
+
+/* ============================================ */
+/* QUIZ SECTION                                 */
+/* ============================================ */
+.quiz-section{
+  padding:48px 20px 56px;
+  background:var(--parchment);
+}
+.quiz-wrap{max-width:560px;margin:0 auto}
+.quiz-header{text-align:center;margin-bottom:40px}
+.quiz-header h2{
+  font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;
+  color:var(--graphite);margin-bottom:8px;line-height:1.15;
+}
+.quiz-header p{font-size:.9rem;color:var(--slate)}
+
+/* PROGRESS BAR */
+.progress-wrap{margin-bottom:36px}
+.progress-label{display:flex;justify-content:space-between;font-size:.8rem;color:var(--slate);margin-bottom:8px}
+.progress-track{height:4px;background:var(--mist);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--navy);border-radius:2px;transition:width .4s ease}
+
+/* QUESTION */
+.question{display:none;animation:fadeUp .35s ease}
+.question.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.question-title{
+  font-family:var(--ff-display);font-size:1.2rem;font-weight:600;
+  color:var(--graphite);margin-bottom:8px;line-height:1.35;
+}
+.question-hint{
+  font-size:.82rem;color:var(--slate);margin-bottom:20px;line-height:1.5;
+}
+.options{display:flex;flex-direction:column;gap:10px}
+.option{
+  display:flex;align-items:center;gap:12px;
+  padding:16px;border:1.5px solid var(--mist);border-radius:var(--radius);
+  cursor:pointer;transition:all var(--transition);background:var(--ivory);
+  font-size:.95rem;color:var(--graphite);
+}
+@media(hover:hover){
+  .option:hover{border-color:var(--navy-light);background:rgba(27,54,93,.02)}
+}
+.option.selected{border-color:var(--navy);background:rgba(27,54,93,.05);font-weight:600}
+.option .radio{
+  width:20px;height:20px;border-radius:50%;border:2px solid var(--mist);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  transition:all var(--transition);
+}
+.option.selected .radio{border-color:var(--navy);background:var(--navy)}
+.option.selected .radio::after{content:'';width:8px;height:8px;background:var(--ivory);border-radius:50%}
+
+/* CHECKBOX VARIANT */
+.option .check{
+  width:20px;height:20px;border-radius:4px;border:2px solid var(--mist);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  transition:all var(--transition);font-size:12px;color:var(--ivory);
+}
+.option.selected .check{border-color:var(--navy);background:var(--navy)}
+.option.selected .check::after{content:'\2713';font-size:13px;line-height:1}
+
+/* FARMER REDIRECT SCREEN */
+.farmer-redirect{
+  display:none;animation:fadeUp .4s ease;
+  text-align:center;padding:24px 0;
+}
+.farmer-redirect.active{display:block}
+.farmer-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(27,54,93,.06);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;font-size:28px;
+}
+.farmer-redirect h3{
+  font-family:var(--ff-display);font-size:1.25rem;font-weight:600;
+  color:var(--graphite);margin-bottom:12px;line-height:1.3;
+}
+.farmer-redirect p{
+  font-size:.9rem;color:var(--slate);line-height:1.6;margin-bottom:24px;
+  max-width:440px;margin-left:auto;margin-right:auto;
+}
+.farmer-redirect .btn-farmer{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border:none;border-radius:var(--radius);
+  background:var(--navy);color:var(--ivory);font-size:.95rem;font-weight:600;
+  cursor:pointer;font-family:var(--ff-body);transition:all var(--transition);
+  text-decoration:none;min-height:48px;
+}
+.farmer-redirect .btn-farmer:hover{background:var(--navy-deep)}
+.farmer-redirect .btn-farmer-back{
+  display:block;margin-top:16px;font-size:.82rem;color:var(--slate);
+  cursor:pointer;border:none;background:none;font-family:var(--ff-body);
+  text-decoration:underline;text-underline-offset:2px;
+  transition:color var(--transition);
+}
+.farmer-redirect .btn-farmer-back:hover{color:var(--navy)}
+
+/* NAV BUTTONS */
+.quiz-nav{display:flex;gap:12px;margin-top:32px}
+.btn-back{
+  flex:0 0 auto;padding:12px 24px;border:2px solid var(--mist);
+  border-radius:var(--radius);background:transparent;color:var(--slate);
+  font-size:.9rem;font-weight:600;cursor:pointer;transition:all var(--transition);
+  font-family:var(--ff-body);min-height:48px;
+}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+.btn-next{
+  flex:1;padding:12px 24px;border:none;border-radius:var(--radius);
+  background:var(--navy);color:var(--ivory);font-size:.95rem;font-weight:600;
+  cursor:pointer;transition:all var(--transition);font-family:var(--ff-body);
+  opacity:.35;pointer-events:none;min-height:48px;
+}
+.btn-next.enabled{opacity:1;pointer-events:auto}
+.btn-next.enabled:hover{background:var(--navy-deep)}
+
+/* ============================================ */
+/* LEAD CAPTURE (after quiz)                    */
+/* ============================================ */
+.lead-capture{display:none;animation:fadeUp .4s ease}
+.lead-capture.active{display:block}
+.lead-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(27,54,93,.06);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+}
+.lead-icon svg{width:28px;height:28px;fill:var(--navy)}
+.lead-capture h2{
+  font-family:var(--ff-display);font-size:1.35rem;font-weight:600;
+  text-align:center;margin-bottom:8px;color:var(--graphite);
+}
+.lead-capture .lead-sub{
+  text-align:center;font-size:.9rem;color:var(--slate);margin-bottom:32px;line-height:1.6;
+}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--graphite);margin-bottom:8px}
+.form-group label .optional{font-weight:400;color:var(--slate)}
+.form-group input{
+  width:100%;padding:14px 16px;border:1.5px solid var(--mist);border-radius:var(--radius);
+  font-size:1rem;font-family:var(--ff-body);color:var(--graphite);background:var(--ivory);
+  transition:border-color var(--transition);min-height:48px;
+}
+.form-group input:focus{outline:none;border-color:var(--navy);background:#fff}
+.form-group input::placeholder{color:var(--mist)}
+.form-group .error-msg{font-size:.78rem;color:var(--amber);margin-top:4px;display:none}
+.form-group.has-error input{border-color:var(--amber)}
+.form-group.has-error .error-msg{display:block}
+
+.consent{display:flex;align-items:flex-start;gap:10px;margin:24px 0;font-size:.8rem;color:var(--slate);line-height:1.5}
+.consent input[type=checkbox]{
+  margin-top:2px;width:18px;height:18px;accent-color:var(--navy);flex-shrink:0;cursor:pointer;
+}
+.consent a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+
+.btn-submit{
+  width:100%;padding:16px 24px;border:none;border-radius:var(--radius);
+  background:var(--navy);color:var(--ivory);font-size:1rem;font-weight:600;
+  cursor:pointer;transition:all var(--transition);font-family:var(--ff-body);
+  min-height:48px;
+}
+.btn-submit:hover{background:var(--navy-deep)}
+.btn-submit:disabled{opacity:.35;cursor:default}
+
+.privacy-note{
+  display:flex;align-items:center;gap:8px;justify-content:center;
+  margin-top:16px;font-size:.78rem;color:var(--slate);
+}
+.privacy-note svg{width:14px;height:14px;fill:var(--slate);opacity:.6}
+.urgency-note{
+  text-align:center;font-size:.75rem;color:var(--slate);margin-top:12px;
+  opacity:.7;
+}
+
+/* ============================================ */
+/* RESULT SCREEN — 4 VARIANTS                   */
+/* ============================================ */
+.result-screen{display:none;animation:fadeUp .45s ease}
+.result-screen.active{display:block}
+
+.result-card{
+  padding:32px 24px;border-radius:var(--radius-lg);margin-bottom:24px;
+  border-left:4px solid transparent;
+}
+/* Variant A — hot red */
+.result-card.hot-a{background:var(--red-bg);border-left-color:var(--red-accent)}
+.result-card.hot-a .result-badge{background:rgba(184,83,62,.12);color:var(--red-accent)}
+.result-card.hot-a .btn-consult{background:var(--red-accent);color:#fff}
+.result-card.hot-a .btn-consult:hover{background:#9e4633}
+/* Variant B — hot orange */
+.result-card.hot-b{background:var(--amber-bg);border-left-color:var(--amber)}
+.result-card.hot-b .result-badge{background:rgba(196,145,60,.12);color:var(--amber)}
+.result-card.hot-b .btn-consult{background:var(--navy);color:var(--ivory)}
+.result-card.hot-b .btn-consult:hover{background:var(--navy-deep)}
+/* Variant C — warm */
+.result-card.warm{background:var(--sage-bg);border-left-color:var(--sage)}
+.result-card.warm .result-badge{background:rgba(107,143,113,.12);color:var(--sage)}
+.result-card.warm .btn-consult{background:var(--sage);color:#fff}
+.result-card.warm .btn-consult:hover{background:#5a7d60}
+/* Variant D — cold */
+.result-card.cold{background:var(--info-bg);border-left-color:var(--navy-light)}
+.result-card.cold .result-badge{background:rgba(42,74,120,.12);color:var(--navy-light)}
+.result-card.cold .btn-consult{background:var(--navy-light);color:#fff}
+.result-card.cold .btn-consult:hover{background:var(--navy)}
+
+.result-badge{
+  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.03em;
+  padding:4px 12px;border-radius:4px;margin-bottom:16px;text-transform:uppercase;
+}
+.result-card h3{
+  font-family:var(--ff-display);font-size:1.25rem;font-weight:600;
+  margin-bottom:12px;color:var(--graphite);line-height:1.3;
+}
+.result-card p{font-size:.9rem;color:var(--slate);line-height:1.65;margin-bottom:16px}
+.result-card .result-reco{
+  font-size:.85rem;font-weight:600;color:var(--graphite);
+  padding:12px 16px;background:rgba(255,255,255,.6);border-radius:var(--radius);
+  margin-bottom:16px;line-height:1.5;
+}
+.btn-consult{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border:none;border-radius:var(--radius);
+  font-size:.95rem;font-weight:600;cursor:pointer;
+  transition:all var(--transition);font-family:var(--ff-body);text-decoration:none;
+  min-height:48px;
+}
+.result-social-proof{
+  margin-top:24px;padding:16px;background:rgba(255,255,255,.5);border-radius:var(--radius);
+}
+.result-social-proof blockquote{
+  font-size:.85rem;color:var(--slate);font-style:italic;line-height:1.6;
+  margin-bottom:8px;
+}
+.result-social-proof cite{
+  font-size:.78rem;color:var(--graphite);font-style:normal;font-weight:600;
+}
+.result-alt-cta{
+  display:block;text-align:center;margin-top:12px;font-size:.82rem;
+  color:var(--navy);text-decoration:underline;text-underline-offset:2px;
+}
+
+/* WHAT HAPPENS NEXT */
+.next-steps{margin-top:8px}
+.next-steps h4{
+  font-family:var(--ff-display);font-size:1.1rem;font-weight:600;
+  margin-bottom:16px;color:var(--graphite);
+}
+.step{display:flex;gap:16px;margin-bottom:16px}
+.step-num{
+  width:32px;height:32px;border-radius:50%;background:var(--navy);
+  color:var(--ivory);font-size:.75rem;font-weight:700;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.step-text{font-size:.88rem;color:var(--slate);line-height:1.6}
+.step-text strong{color:var(--graphite)}
+
+/* ============================================ */
+/* HOW IT WORKS (Pattern E — Timeline)          */
+/* ============================================ */
+.how-section{
+  padding:48px 20px;
+  background:var(--ivory);
+}
+.how-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--graphite);
+  text-align:center;margin-bottom:48px;line-height:1.15;
+}
+.timeline{
+  max-width:640px;margin:0 auto;
+  position:relative;
+  padding-left:48px;
+}
+.timeline::before{
+  content:'';position:absolute;left:15px;top:4px;bottom:4px;
+  width:2px;background:rgba(27,54,93,.15);
+}
+.timeline-step{
+  position:relative;margin-bottom:40px;
+}
+.timeline-step:last-child{margin-bottom:0}
+.timeline-num{
+  position:absolute;left:-48px;top:0;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--navy);color:var(--ivory);
+  font-size:.75rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  z-index:1;
+}
+.timeline-step h3{
+  font-family:var(--ff-display);font-size:1.1rem;font-weight:600;
+  color:var(--graphite);margin-bottom:4px;line-height:1.3;
+}
+.timeline-step p{
+  font-size:.88rem;color:var(--slate);line-height:1.6;
+}
+.timeline-step .timeline-tag{
+  display:inline-block;font-size:.7rem;font-weight:600;
+  color:var(--navy);background:rgba(27,54,93,.06);
+  padding:2px 10px;border-radius:12px;margin-top:8px;
+  text-transform:uppercase;letter-spacing:.03em;
+}
+
+/* ============================================ */
+/* TESTIMONIALS                                 */
+/* ============================================ */
+.testimonials-section{
+  padding:48px 20px;
+  background:var(--parchment);
+}
+.testimonials-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--graphite);
+  text-align:center;margin-bottom:40px;line-height:1.15;
+}
+.testimonials-grid{
+  display:grid;grid-template-columns:1fr;gap:20px;
+  max-width:960px;margin:0 auto;
+}
+.testimonial-card{
+  padding:24px;border-radius:var(--radius-lg);
+  background:var(--ivory);border:1px solid var(--mist);
+  position:relative;
+}
+.testimonial-stars{
+  color:var(--amber);font-size:.85rem;margin-bottom:12px;letter-spacing:2px;
+}
+.testimonial-card blockquote{
+  font-size:.88rem;color:var(--slate);line-height:1.65;
+  margin-bottom:16px;font-style:italic;
+}
+.testimonial-author{
+  display:flex;align-items:center;gap:12px;
+}
+.testimonial-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(27,54,93,.06);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--navy);
+  flex-shrink:0;
+}
+.testimonial-name{font-size:.82rem;font-weight:600;color:var(--graphite)}
+.testimonial-loc{font-size:.75rem;color:var(--slate)}
+
+/* ============================================ */
+/* TRUST — "DLACZEGO MY" (Pattern B — Split)    */
+/* ============================================ */
+.trust-section{
+  padding:48px 20px;
+  background:var(--ivory);
+}
+.trust-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--graphite);
+  text-align:center;margin-bottom:40px;line-height:1.15;
+}
+.trust-grid{
+  display:grid;grid-template-columns:1fr;gap:20px;
+  max-width:960px;margin:0 auto;
+}
+.trust-card{
+  padding:24px;border:1px solid var(--mist);border-radius:var(--radius-lg);
+  background:var(--ivory);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.trust-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(27,54,93,.08);
+}
+.trust-card-icon{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(27,54,93,.06);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.trust-card-icon svg{width:20px;height:20px;fill:var(--navy)}
+.trust-card h3{
+  font-family:var(--ff-display);font-size:1.1rem;font-weight:600;
+  color:var(--graphite);margin-bottom:8px;line-height:1.3;
+}
+.trust-card p{font-size:.88rem;color:var(--slate);line-height:1.6}
+
+/* ============================================ */
+/* FAQ (Pattern H — Accordion)                  */
+/* ============================================ */
+.faq-section{
+  padding:48px 20px;
+  background:var(--parchment);
+}
+.faq-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--graphite);
+  text-align:center;margin-bottom:40px;line-height:1.15;
+}
+.faq-list{
+  max-width:680px;margin:0 auto;
+  display:flex;flex-direction:column;gap:8px;
+}
+.faq-item{
+  border:1px solid var(--mist);border-radius:var(--radius-lg);
+  overflow:hidden;background:var(--ivory);
+}
+.faq-trigger{
+  width:100%;padding:18px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  border:none;background:transparent;cursor:pointer;
+  font-family:var(--ff-body);font-size:.92rem;font-weight:600;
+  color:var(--graphite);text-align:left;line-height:1.4;
+  transition:background var(--transition);
+}
+.faq-trigger:hover{background:rgba(242,237,230,.5)}
+.faq-chevron{
+  width:20px;height:20px;flex-shrink:0;
+  transition:transform .2s ease;
+  fill:var(--slate);
+}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-content{
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease, padding .3s ease;
+}
+.faq-item.open .faq-content{
+  max-height:500px;
+}
+.faq-answer{
+  padding:0 20px 18px;
+  font-size:.88rem;color:var(--slate);line-height:1.7;
+}
+
+/* ============================================ */
+/* METRICS (Pattern D — Metric Cards)           */
+/* ============================================ */
+.metrics-section{
+  padding:48px 20px;
+  background:var(--ivory);
+}
+.metrics-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:600;color:var(--graphite);
+  text-align:center;margin-bottom:40px;line-height:1.15;
+}
+.metrics-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  text-align:center;max-width:960px;margin:0 auto;
+}
+.metric-card{
+  padding:24px 16px;
+  border-radius:var(--radius-lg);
+  background:var(--parchment);
+}
+.metric-value{
+  font-family:var(--ff-display);
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;color:var(--navy);
+  line-height:1.1;margin-bottom:8px;
+}
+.metric-label{
+  font-size:.8rem;color:var(--slate);
+  text-transform:uppercase;letter-spacing:.05em;
+  font-weight:600;
+}
+
+/* ============================================ */
+/* AUTHOR (Pattern B — Split Layout)            */
+/* ============================================ */
+.author-section{
+  padding:48px 20px;
+  background:var(--parchment);
+}
+.split-layout{
+  display:grid;grid-template-columns:1fr;
+  gap:32px;align-items:center;
+  max-width:960px;margin:0 auto;
+}
+.author-photo-wrap{display:flex;justify-content:center}
+.author-photo{
+  width:120px;height:120px;border-radius:50%;
+  background:var(--ivory);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-size:2.5rem;font-weight:700;color:var(--navy);
+  border:3px solid var(--mist);
+}
+.author-content h3{
+  font-family:var(--ff-display);font-size:1.35rem;font-weight:600;
+  color:var(--graphite);margin-bottom:4px;line-height:1.2;
+}
+.author-title{
+  font-size:.85rem;color:var(--navy);font-weight:600;margin-bottom:16px;
+}
+.author-content p{font-size:.92rem;color:var(--slate);line-height:1.7}
+.author-trust-list{
+  display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;
+}
+.author-trust-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:.82rem;color:var(--slate);
+}
+.author-trust-item svg{width:16px;height:16px;fill:var(--navy);flex-shrink:0;opacity:.7}
+
+/* ============================================ */
+/* CTA SECTION (dark — navy bg)                 */
+/* ============================================ */
+.cta-section{
+  padding:64px 20px;
+  background:var(--navy);
+  text-align:center;
+}
+.cta-section h2{
+  font-family:var(--ff-display);
+  font-size:clamp(1.5rem,4vw,2.5rem);
+  font-weight:700;color:var(--ivory);
+  margin-bottom:16px;line-height:1.1;
+}
+.cta-section p{
+  font-size:1rem;color:rgba(250,248,245,.75);
+  max-width:480px;margin:0 auto 32px;line-height:1.6;
+}
+.btn-cta-dark{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ivory);color:var(--navy);
+  padding:16px 32px;border-radius:var(--radius);border:none;
+  font-family:var(--ff-body);font-size:1rem;font-weight:600;
+  cursor:pointer;transition:all var(--transition);text-decoration:none;
+  min-height:48px;
+}
+.btn-cta-dark:hover{background:var(--parchment);transform:translateY(-1px)}
+.btn-cta-dark:active{transform:translateY(0)}
+.btn-cta-dark svg{width:18px;height:18px;fill:var(--navy);transition:transform var(--transition)}
+.btn-cta-dark:hover svg{transform:translateX(3px)}
+
+/* ============================================ */
+/* FOOTER (dark — graphite bg)                  */
+/* ============================================ */
+footer{
+  padding:32px 20px;text-align:center;
+  font-size:.75rem;
+  color:rgba(250,248,245,.5);
+  background:var(--graphite);
+  line-height:1.7;
+}
+footer a{color:rgba(250,248,245,.5);text-decoration:underline;text-underline-offset:2px}
+footer a:hover{color:var(--ivory)}
+.footer-disclaimer{
+  max-width:640px;margin:0 auto 16px;
+  font-size:.7rem;color:rgba(250,248,245,.35);line-height:1.6;
+}
+
+/* ============================================ */
+/* EXIT-INTENT POPUP                            */
+/* ============================================ */
+.popup-overlay{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(44,44,44,.6);backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;padding:24px;
+}
+.popup-overlay.visible{display:flex}
+.popup{
+  width:100%;max-width:440px;background:#fff;
+  border-radius:var(--radius-lg);padding:40px 32px;
+  box-shadow:var(--shadow-lg);position:relative;
+  animation:popIn .3s ease;
+}
+@keyframes popIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.popup-close{
+  position:absolute;top:16px;right:16px;width:40px;height:40px;
+  border:none;background:var(--parchment);border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--slate);transition:background var(--transition);
+}
+.popup-close:hover{background:var(--mist)}
+.popup h3{
+  font-family:var(--ff-display);font-size:1.25rem;font-weight:600;
+  text-align:center;margin-bottom:8px;color:var(--graphite);
+}
+.popup p{text-align:center;font-size:.88rem;color:var(--slate);margin-bottom:24px;line-height:1.6}
+.popup input{
+  width:100%;padding:14px 16px;border:1.5px solid var(--mist);
+  border-radius:var(--radius);font-size:1rem;font-family:var(--ff-body);
+  margin-bottom:12px;color:var(--graphite);background:var(--ivory);min-height:48px;
+}
+.popup input:focus{outline:none;border-color:var(--navy)}
+.popup .btn-popup{
+  width:100%;padding:16px;border:none;border-radius:var(--radius);
+  background:var(--navy);color:var(--ivory);font-size:.95rem;font-weight:600;
+  cursor:pointer;font-family:var(--ff-body);transition:background var(--transition);
+  min-height:48px;
+}
+.popup .btn-popup:hover{background:var(--navy-deep)}
+.popup .popup-proof{
+  text-align:center;font-size:.78rem;color:var(--slate);margin-top:16px;
+  font-style:italic;opacity:.7;
+}
+.popup .popup-dismiss{
+  display:block;text-align:center;margin-top:12px;font-size:.78rem;
+  color:var(--mist);cursor:pointer;border:none;background:none;
+  font-family:var(--ff-body);transition:color var(--transition);
+}
+.popup .popup-dismiss:hover{color:var(--slate)}
+
+/* ============================================ */
+/* MOBILE STICKY CTA BAR                        */
+/* ============================================ */
+.mobile-cta-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:40;
+  background:var(--navy);color:var(--ivory);
+  padding:12px 20px;
+  box-shadow:0 -2px 12px rgba(0,0,0,.15);
+}
+.mobile-cta-bar a{
+  display:block;width:100%;padding:12px;border:none;border-radius:var(--radius);
+  background:var(--ivory);color:var(--navy);font-size:.9rem;font-weight:600;
+  text-align:center;text-decoration:none;font-family:var(--ff-body);
+}
+.mobile-cta-bar.visible{display:block}
+
+/* ============================================ */
+/* RESPONSIVE                                   */
+/* ============================================ */
+@media(min-width:640px){
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(min-width:768px){
+  .hero{padding:128px 32px;min-height:85vh}
+  .quiz-section{padding:80px 32px}
+  .how-section{padding:80px 32px}
+  .testimonials-section{padding:80px 32px}
+  .trust-section{padding:80px 32px}
+  .faq-section{padding:80px 32px}
+  .metrics-section{padding:80px 32px}
+  .author-section{padding:80px 32px}
+  .cta-section{padding:96px 32px}
+
+  .container{padding:0 32px}
+  .container-prose{padding:0 32px}
+
+  .split-layout{grid-template-columns:auto 1fr;gap:56px}
+  .metrics-grid{grid-template-columns:repeat(4,1fr);gap:24px}
+  .author-photo{width:160px;height:160px;font-size:3.5rem}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+
+  .hero h1{letter-spacing:-.02em}
+  .quiz-header h2{font-size:1.75rem}
+  .hero-metrics{gap:48px}
+  .hero-metric .hm-value{font-size:2rem}
+}
+
+@media(min-width:1024px){
+  .trust-grid{grid-template-columns:repeat(4,1fr);gap:24px}
+  .testimonials-grid{grid-template-columns:repeat(3,1fr)}
+  .metric-card{padding:32px 24px}
+}
+
+@media(max-width:640px){
+  .hero-trust{gap:16px}
+  .hero-trust-item{font-size:.78rem}
+  .hero-metrics{gap:20px}
+  .hero-metric .hm-value{font-size:1.5rem}
+  .split-layout{text-align:center}
+  .author-trust-list{justify-content:center}
+}
+
+@media(max-width:767px){
+  .mobile-cta-bar.visible{display:block}
+  body{padding-bottom:64px}
+}
+</style>
+</head>
+<body>
+
+<!-- SKIP LINK -->
+<a href="#quiz" class="sr-only" style="position:absolute;left:-9999px" onfocus="this.style.position='static';this.style.left='0'">Przejdź do analizy</a>
+
+<!-- ===== TOP BAR ===== -->
+<header class="top-bar">
+  <div class="container">
+    <span class="logo">Nowacka <span>&</span> Górnicki</span>
+  </div>
+</header>
+
+<!-- ===== HERO (Pattern A) ===== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Bezpłatna analiza · 2 minuty
+    </div>
+    <h1>Dowiedz się w 2 minuty, czy możesz legalnie <em>wyzerować swoje długi</em></h1>
+    <p class="hero-sub">Anonimowa analiza Twojej sytuacji. Bez kosztów. Bez prawniczej mowy. Zero zobowiązań — możesz zrezygnować w każdej chwili.</p>
+
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <div class="hm-value">1000+</div>
+        <div class="hm-label">osób wyszło z długów</div>
+        <div class="hm-check"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> potwierdzone</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-value">97%</div>
+        <div class="hm-label">skuteczności</div>
+        <div class="hm-check"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> potwierdzone</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-value">300 mln zł</div>
+        <div class="hm-label">długów umorzonych</div>
+        <div class="hm-check"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> potwierdzone</div>
+      </div>
+    </div>
+
+    <a href="#quiz" class="hero-cta" id="startQuiz">
+      Sprawdź swoje opcje — bezpłatnie
+      <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+    </a>
+    <span class="hero-cta-sub">Zajmie Ci to mniej niż 2 minuty. Żadnych danych osobowych na tym etapie.</span>
+
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        Licencjonowani doradcy
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        100% anonimowo
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+        Wynik w 2 minuty
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUIZ ===== -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-header" id="quizHeader">
+      <h2>Twoja anonimowa analiza</h2>
+      <p>Odpowiedz na 5 pytań — zobaczysz jakie masz opcje.</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-label"><span id="progressText">Pytanie 1 z 5</span><span id="progressPct">20%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressBar" style="width:20%"></div></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="question active" data-q="1" data-type="single">
+      <div class="question-title">Zanim zaczniemy — powiedz nam, kogo dotyczy ta sytuacja:</div>
+      <div class="question-hint">Nie musisz podawać żadnych danych osobowych. To pytanie tylko pomaga nam dopasować analizę do Twojej sytuacji.</div>
+      <div class="options">
+        <div class="option" data-val="prywatna"><span class="radio"></span>Jestem osobą prywatną (nie prowadzę firmy)</div>
+        <div class="option" data-val="jdg"><span class="radio"></span>Prowadzę jednoosobową działalność (JDG)</div>
+        <div class="option" data-val="spolka"><span class="radio"></span>Jestem wspólnikiem lub właścicielem spółki</div>
+        <div class="option" data-val="rolnik"><span class="radio"></span>Jestem rolnikiem</div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-next" id="next1">Dalej &rarr;</button>
+      </div>
+    </div>
+
+    <!-- FARMER REDIRECT -->
+    <div class="farmer-redirect" id="farmerRedirect">
+      <div class="farmer-icon">&#127806;</div>
+      <h3>Przygotowaliśmy osobne miejsce dla Twojego przypadku!</h3>
+      <p>Sytuacja rolników wymaga innego podejścia prawnego. Mamy dedykowaną stronę z informacjami dostosowanymi do Twojej sytuacji.</p>
+      <a href="#" class="btn-farmer">Przejdź do strony dla rolników &rarr;</a>
+      <button class="btn-farmer-back" id="farmerBack">Wróć i wybierz inną opcję</button>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question" data-q="2" data-type="single">
+      <div class="question-title">Ile w przybliżeniu wynoszą Twoje długi?</div>
+      <div class="question-hint">Nie musisz znać dokładnej kwoty — wystarczy szacunek. Nikt nie będzie Cię z tego rozliczać.</div>
+      <div class="options">
+        <div class="option" data-val="do50k"><span class="radio"></span>Mniej niż 50 000 zł</div>
+        <div class="option" data-val="50k-200k"><span class="radio"></span>Od 50 000 do 200 000 zł</div>
+        <div class="option" data-val="200k-500k"><span class="radio"></span>Od 200 000 do 500 000 zł</div>
+        <div class="option" data-val="pow500k"><span class="radio"></span>Powyżej 500 000 zł</div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="goBack()">&larr; Wróć</button>
+        <button class="btn-next" id="next2">Dalej &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question" data-q="3" data-type="multi">
+      <div class="question-title">Komu jesteś winien/winna pieniądze?</div>
+      <div class="question-hint">Zaznacz wszystkich — nawet jeśli dług jest mały. To ważne dla dopasowanej analizy. Możesz zaznaczyć kilka.</div>
+      <div class="options">
+        <div class="option" data-val="bank"><span class="check"></span>Bankowi — kredyt, karta, pożyczka</div>
+        <div class="option" data-val="zus"><span class="check"></span>ZUS-owi</div>
+        <div class="option" data-val="us"><span class="check"></span>Urzędowi Skarbowemu</div>
+        <div class="option" data-val="chwilowki"><span class="check"></span>Firmom pożyczkowym lub chwilówkom</div>
+        <div class="option" data-val="leasing"><span class="check"></span>Firmie leasingowej</div>
+        <div class="option" data-val="dostawcy"><span class="check"></span>Dostawcom lub kontrahentom biznesowym</div>
+        <div class="option" data-val="inne"><span class="check"></span>Komuś innemu</div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="goBack()">&larr; Wróć</button>
+        <button class="btn-next" id="next3">Dalej &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question" data-q="4" data-type="single">
+      <div class="question-title">Co się teraz dzieje z Twoimi długami?</div>
+      <div class="question-hint">Odpowiedz szczerze — nie oceniamy. Im dokładniej odpowiesz, tym lepsza będzie Twoja analiza.</div>
+      <div class="options">
+        <div class="option" data-val="komornik"><span class="radio"></span>Komornik już działa — blokuje konto, zajmuje wynagrodzenie lub majątek</div>
+        <div class="option" data-val="wezwanie"><span class="radio"></span>Dostałem/am nakaz zapłaty lub wezwanie sądowe, ale komornika jeszcze nie ma</div>
+        <div class="option" data-val="upomnienia"><span class="radio"></span>Na razie tylko telefony od windykatorów i upomnienia</div>
+        <div class="option" data-val="nie_wiem"><span class="radio"></span>Nie wiem dokładnie / nie jestem pewien/pewna</div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="goBack()">&larr; Wróć</button>
+        <button class="btn-next" id="next4">Dalej &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question" data-q="5" data-type="multi">
+      <div class="question-title">Co jest dla Ciebie najważniejsze do ochrony?</div>
+      <div class="question-hint">Każda odpowiedź jest ważna. To od niej zależy, jaką strategię wyjścia z długów zaproponujemy. Możesz zaznaczyć kilka.</div>
+      <div class="options">
+        <div class="option" data-val="mieszkanie"><span class="check"></span>Mieszkanie lub dom</div>
+        <div class="option" data-val="samochod"><span class="check"></span>Samochód lub inne pojazdy</div>
+        <div class="option" data-val="wynagrodzenie"><span class="check"></span>Wynagrodzenie, emeryturę lub rentę</div>
+        <div class="option" data-val="firma"><span class="check"></span>Działalność — chcę dalej prowadzić firmę</div>
+        <div class="option" data-val="spokoj"><span class="check"></span>Spokój — chcę przestać żyć w strachu przed telefonem</div>
+        <div class="option" data-val="inne"><span class="check"></span>Coś innego</div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-back" onclick="goBack()">&larr; Wróć</button>
+        <button class="btn-next" id="next5">Zobacz wynik &rarr;</button>
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE -->
+    <div class="lead-capture" id="leadCapture">
+      <div class="lead-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+      <h2>Twoja analiza jest gotowa. Zostało jeszcze jedno.</h2>
+      <p class="lead-sub">Przygotowaliśmy dla Ciebie spersonalizowaną ocenę sytuacji — z konkretnymi opcjami wyjścia z długów dopasowanymi do Twoich odpowiedzi. Podaj adres email, żebyśmy mogli ją do Ciebie wysłać.</p>
+
+      <form id="leadForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="fname">Imię</label>
+          <input type="text" id="fname" placeholder="Jak się mamy do Ciebie zwracać?" autocomplete="given-name" required>
+          <div class="error-msg">Podaj swoje imię</div>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" placeholder="Tu wyślemy Twoją analizę" autocomplete="email" required>
+          <div class="error-msg">Podaj prawidłowy adres e-mail</div>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Telefon <span class="optional">(opcjonalnie)</span></label>
+          <input type="tel" id="fphone" placeholder="Tylko jeśli chcesz, żebyśmy oddzwonili" autocomplete="tel">
+          <div class="error-msg">Podaj prawidłowy numer telefonu</div>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">Zgadzam się na przetwarzanie moich danych osobowych w celu przygotowania analizy. <a href="#" target="_blank">Polityka prywatności</a></label>
+        </div>
+        <button type="submit" class="btn-submit">Pokaż mi moją analizę &rarr;</button>
+        <div class="privacy-note">
+          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          Twoje dane są bezpieczne. Nie udostępniamy ich nikomu. Możesz zrezygnować z kontaktu w każdej chwili.
+        </div>
+        <div class="urgency-note">Twoja analiza będzie aktywna przez 48 godzin — potem kasujemy dane quizu ze względów bezpieczeństwa.</div>
+      </form>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-screen" id="resultScreen">
+      <div class="result-card" id="resultCard">
+        <div class="result-badge" id="resultBadge"></div>
+        <h3 id="resultTitle"></h3>
+        <p id="resultDesc"></p>
+        <p id="resultDesc2" style="display:none"></p>
+        <div class="result-reco" id="resultReco"></div>
+        <a href="#" class="btn-consult" id="resultCTA"></a>
+        <a href="#" class="result-alt-cta" id="resultAltCTA" style="display:none"></a>
+        <div class="result-social-proof" id="resultProof">
+          <blockquote id="resultProofQuote"></blockquote>
+          <cite id="resultProofCite"></cite>
+        </div>
+      </div>
+      <div class="next-steps">
+        <h4>Co teraz się wydarzy:</h4>
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>W ciągu 2 minut</strong> otrzymasz email z analizą Twojej sytuacji.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Przez 3 tygodnie</strong> dostaniesz 5 maili z konkretnymi krokami — bez presji.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Gdy będziesz gotowy</strong> — umów się na bezpłatną 15-minutową rozmowę z doradcą.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS (Pattern E — Timeline) ===== -->
+<section class="how-section">
+  <div class="container">
+    <h2 class="reveal">Jak to działa</h2>
+    <div class="timeline reveal-stagger">
+      <div class="timeline-step reveal">
+        <div class="timeline-num">1</div>
+        <h3>Quiz</h3>
+        <p>Odpowiadasz na 5 pytań o swojej sytuacji. Anonimowo, bezpłatnie, bez konieczności podawania danych osobowych.</p>
+        <span class="timeline-tag">2 minuty</span>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-num">2</div>
+        <h3>Twoja analiza</h3>
+        <p>Na podstawie odpowiedzi przygotowujemy ocenę Twojej sytuacji i możliwe opcje wyjścia z długów. Dostajesz ją mailowo.</p>
+        <span class="timeline-tag">na email</span>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-num">3</div>
+        <h3>Bezpłatna rozmowa</h3>
+        <p>Jak chcesz — umawiamy się na 15-minutową rozmowę telefoniczną. Omawiamy szczegóły, odpowiadamy na pytania. Bez presji, bez zobowiązań.</p>
+        <span class="timeline-tag">15 minut</span>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="timeline-num">4</div>
+        <h3>Działamy</h3>
+        <p>Jeśli zdecydujesz się na współpracę — przygotowujemy wniosek, składamy go do sądu i prowadzimy całą sprawę od początku do końca.</p>
+        <span class="timeline-tag">pełna obsługa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METRICS (Pattern D) ===== -->
+<section class="metrics-section">
+  <div class="container">
+    <h2 class="reveal">Liczby mówią za nas</h2>
+    <div class="metrics-grid reveal-stagger">
+      <div class="metric-card reveal">
+        <div class="metric-value" data-target="1000" data-suffix="+">0</div>
+        <div class="metric-label">osób wyszło z długów</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-target="97" data-suffix="%">0</div>
+        <div class="metric-label">skuteczności w sprawach</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-target="300" data-suffix=" mln" data-is-text="true">0</div>
+        <div class="metric-label">złotych długów umorzonych</div>
+      </div>
+      <div class="metric-card reveal">
+        <div class="metric-value" data-target="12" data-suffix=" lat">0</div>
+        <div class="metric-label">doświadczenia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="reveal">Co mówią nasi klienci</h2>
+    <div class="testimonials-grid reveal-stagger">
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Jestem dopiero po pierwszej darmowej konsultacji, ale już wiem, że dobrze trafiłem. W końcu ktoś wysłuchał mnie uważnie, zerknął fachowym okiem na moje dokumenty. Próbowałem w 2 firmach oddłużeniowych i wydałem tylko pieniądze. Nikt nie poświęcił mi tyle czasu jak ta kancelaria.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div><div class="testimonial-name">Paweł</div><div class="testimonial-loc">Kraków</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Bardzo wstydziłem się swojej sytuacji. W Kancelarii usłyszałem, że ogłoszenie upadłości konsumenckiej to żaden powód do wstydu, tylko dowód, że jestem odpowiedzialny za siebie i rodzinę. Zatrzymali wszystkie windykacje i telefony w kilka dni.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">F</div>
+          <div><div class="testimonial-name">Fabian</div><div class="testimonial-loc">Katowice</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Na Panią Nowacką trafiłam przez przypadek, szukając pomocy w internecie. To co było najważniejsze — była ze mną w stałym kontakcie, a gdy coś było niezrozumiałe, szybko i zrozumiale wyjaśniała o co chodzi. W końcu uwolniłam się ze spirali chwilówek.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div><div class="testimonial-name">Anna</div><div class="testimonial-loc">Kraków</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Jestem wdzięczny za wsparcie. Pracują tam osoby, które naprawdę znają się na swojej pracy i mają wieloletnie doświadczenie. Zawsze można na nich liczyć, a kontakt jest świetny. Polecam każdemu, kto znalazł się w trudnej sytuacji finansowej.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">Z</div>
+          <div><div class="testimonial-name">Zbigniew</div><div class="testimonial-loc">Jasło</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Kiedy zwróciłam się o wsparcie, czułam, że stoję nad przepaścią. Wierzyciele nieustannie dzwonili. Byłam przekonana, że nie ma wyjścia. Zespół natychmiast zajął się moją sprawą. Działali szybko, a co najważniejsze — skutecznie.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div><div class="testimonial-name">Anna</div><div class="testimonial-loc">Warszawa</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Moje zadłużenie sięgało 3 mln zł. Miałem zablokowane konta przez kilkunastu komorników. Szukałem pomocy bezskutecznie. Dopiero wsparcie zespołu Kancelarii pozwoliło mi wyjść z zadłużenia. Udało się umorzyć moje zobowiązania.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div><div class="testimonial-name">Jacek</div><div class="testimonial-loc">Lublin</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST — "DLACZEGO MY" ===== -->
+<section class="trust-section">
+  <div class="container">
+    <h2 class="reveal">Dlaczego my</h2>
+    <div class="trust-grid reveal-stagger">
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h3>Zajmujemy się tylko tym</h3>
+        <p>Nie prowadzimy „wszystkiego". Wyłącznie upadłość konsumencka. Znamy każdy zakamarek tej procedury — i nie uczymy się na Twoim przypadku.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+        </div>
+        <h3>Mówimy po ludzku</h3>
+        <p>Nie musisz rozumieć prawa. Od tego jesteśmy my. Tłumaczymy każdy krok, każdy dokument, każdą decyzję sądu — w normalnym języku.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        </div>
+        <h3>Wiesz, co płacisz</h3>
+        <p>Podajemy ceny zanim cokolwiek podpiszesz. Żadnych ukrytych kosztów. Żadnych „a, no to jeszcze dojdzie..."</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        </div>
+        <h3>Twoje dane są bezpieczne</h3>
+        <p>Wszystko, co nam powiesz — zostaje między nami. Jesteśmy objęci tajemnicą zawodową. To obowiązek prawny, nie marketingowe zdanie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUTHOR (Pattern B) ===== -->
+<section class="author-section">
+  <div class="container">
+    <div class="split-layout reveal">
+      <div class="author-photo-wrap">
+        <div class="author-photo">KN</div>
+      </div>
+      <div class="author-content">
+        <h3>Karolina Nowacka</h3>
+        <div class="author-title">Doradca restrukturyzacyjny · Radca prawny</div>
+        <p>Specjalizuję się w ochronie majątku osób zadłużonych — właścicieli firm i osób prywatnych. Chronię to, co Twoje. Mówimy prostym językiem, bo wiem że w trudnej sytuacji nikt nie potrzebuje żargonu.</p>
+        <div class="author-trust-list">
+          <div class="author-trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            Licencjonowany doradca
+          </div>
+          <div class="author-trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            Jasne warunki współpracy
+          </div>
+          <div class="author-trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            Odpowiedź w 48h
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ (Pattern H — Accordion) ===== -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="reveal">Najczęściej zadawane pytania</h2>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Czy upadłość konsumencka to coś legalnego?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Tak. To przepis polskiego prawa, który istnieje po to, żeby dać osobom z długami szansę na nowy start. Nie jest to żaden „trick" ani obejście systemu — to narzędzie stworzone przez ustawodawcę dokładnie dla takich sytuacji.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Czy stracę wszystko — mieszkanie, samochód, oszczędności?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Nie automatycznie. To zależy od wielu czynników: wartości majątku, rodzaju długów, Twojej sytuacji życiowej. W wielu przypadkach można chronić część lub całość majątku. Właśnie dlatego ważna jest indywidualna analiza — nie ma jednej odpowiedzi dla wszystkich.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Ile to kosztuje?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Analiza i pierwsza konsultacja są bezpłatne. Koszty postępowania sądowego są regulowane ustawowo i niewysokie. Dokładne koszty procesu omawiamy zawsze przed podjęciem jakiejkolwiek decyzji — bez nieoczekiwanych niespodzianek.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Jak długo trwa cały proces?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Samo złożenie wniosku to kilka tygodni. Sąd ogłasza upadłość zazwyczaj w ciągu 2–6 miesięcy od złożenia wniosku. Potem następuje plan spłat (zazwyczaj 3 lata) albo — w niektórych przypadkach — szybsze umorzenie. Każda sprawa jest inna.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Czy to zostanie gdzieś odnotowane? Czy pracodawca się dowie?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Postępowanie jest jawne w sensie formalnym — jest wpisywane do Krajowego Rejestru Zadłużonych. Pracodawca nie dostaje żadnego zawiadomienia, chyba że komornik wcześniej zajął Twoje wynagrodzenie. Wiele osób boi się wstydu — rozumiemy to. Ale w praktyce nikt nie przegląda tych rejestrów w związku z Twoją pracą.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Co z długami u ZUS-u lub Urzędu Skarbowego?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Tak — te długi również mogą być umorzone w ramach upadłości konsumenckiej. To częste pytanie, bo wiele osób myśli, że długi wobec państwa są „nieumarzalne". Nie są.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Co się stanie z komornikiem, kiedy złożę wniosek?
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </button>
+        <div class="faq-content"><div class="faq-answer">Z chwilą ogłoszenia upadłości przez sąd — postępowania komornicze zostają zawieszone. Komornik nie może dalej działać. To jedna z największych ulg, o której mówią nasi klienci.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA (dark section) ===== -->
+<section class="cta-section">
+  <div class="container-prose reveal">
+    <h2>Gotowy na pierwszy krok?</h2>
+    <p>Bezpłatna, anonimowa analiza — 2 minuty i wiesz na czym stoisz. Zero zobowiązań.</p>
+    <a href="#quiz" class="btn-cta-dark" id="ctaBottom">
+      Sprawdź swoje opcje
+      <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-disclaimer">
+    Treści zawarte na tej stronie mają charakter wyłącznie informacyjny i nie stanowią porady prawnej. Każda sytuacja zadłużeniowa jest inna — skontaktuj się z nami, aby uzyskać analizę dotyczącą Twojego konkretnego przypadku.
+  </div>
+  Nowacka & Górnicki Sp. z o.o. · ul. Jana Pawła II 49 D, 62-510 Konin · NIP 5252785977<br>
+  &copy; 2026 · <a href="#">Polityka prywatności</a> · <a href="#">Regulamin</a>
+</footer>
+
+<!-- ===== EXIT-INTENT POPUP ===== -->
+<div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-label="Zapisz się na analizę">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()" aria-label="Zamknij">&times;</button>
+    <h3>Zanim wyjdziesz — weź to ze sobą</h3>
+    <p>Bezpłatna analiza Twojej sytuacji czeka. 2 minuty, zero zobowiązań.</p>
+    <input type="email" id="popupEmail" placeholder="Twój najlepszy e-mail" aria-label="Adres e-mail">
+    <button class="btn-popup" onclick="submitPopup()">Tak, wyślij mi analizę</button>
+    <div class="popup-proof">„Najlepsza decyzja jaką podjąłem — żałuję tylko, że nie zadzwoniłem wcześniej." — Marek W.</div>
+    <button class="popup-dismiss" onclick="closePopup()">Nie, dziękuję</button>
+  </div>
+</div>
+
+<!-- ===== MOBILE STICKY CTA ===== -->
+<div class="mobile-cta-bar" id="mobileCta">
+  <a href="#quiz">Sprawdź swoje opcje — bezpłatnie</a>
+</div>
+
+<script>
+// ============================================
+// QUIZ ENGINE
+// ============================================
+const answers = {};
+let current = 1;
+const totalQ = 5;
+
+// Option click handlers
+document.querySelectorAll('.question').forEach(q => {
+  const type = q.dataset.type;
+  q.querySelectorAll('.option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const qNum = parseInt(q.dataset.q);
+      if (type === 'single') {
+        q.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        opt.classList.toggle('selected');
+        answers[qNum] = opt.dataset.val;
+      } else {
+        opt.classList.toggle('selected');
+        answers[qNum] = Array.from(q.querySelectorAll('.option.selected')).map(o => o.dataset.val);
+      }
+      updateNextBtn(qNum);
+    });
+  });
+});
+
+function updateNextBtn(qNum) {
+  const btn = document.getElementById('next' + qNum);
+  if (!btn) return;
+  const q = document.querySelector('.question[data-q="' + qNum + '"]');
+  const selected = q.querySelectorAll('.option.selected');
+  btn.classList.toggle('enabled', selected.length > 0);
+}
+
+// Next buttons
+for (let i = 1; i <= totalQ; i++) {
+  const btn = document.getElementById('next' + i);
+  if (btn) {
+    btn.addEventListener('click', () => {
+      if (!btn.classList.contains('enabled')) return;
+
+      // Q1: farmer redirect
+      if (i === 1 && answers[1] === 'rolnik') {
+        showFarmerRedirect();
+        return;
+      }
+
+      if (i < totalQ) {
+        goTo(i + 1);
+      } else {
+        showLeadCapture();
+      }
+    });
+  }
+}
+
+// Farmer redirect
+function showFarmerRedirect() {
+  document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('quizHeader').style.display = 'none';
+  document.getElementById('farmerRedirect').classList.add('active');
+}
+
+document.getElementById('farmerBack').addEventListener('click', () => {
+  document.getElementById('farmerRedirect').classList.remove('active');
+  document.getElementById('progressWrap').style.display = '';
+  document.getElementById('quizHeader').style.display = '';
+  // Clear farmer selection
+  const q1 = document.querySelector('.question[data-q="1"]');
+  q1.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  answers[1] = undefined;
+  goTo(1);
+});
+
+function goTo(n) {
+  document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+  const target = document.querySelector('.question[data-q="' + n + '"]');
+  if (target) { target.classList.add('active'); current = n; }
+  updateProgress(n);
+  updateNextBtn(n);
+}
+
+function goBack() {
+  if (current > 1) goTo(current - 1);
+}
+
+function updateProgress(n) {
+  const pct = Math.round((n / totalQ) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = 'Pytanie ' + n + ' z ' + totalQ;
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+
+function showLeadCapture() {
+  document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('quizHeader').innerHTML = '<h2>Ostatni krok</h2><p>Podaj dane — wyślemy Ci wynik analizy.</p>';
+  document.getElementById('leadCapture').classList.add('active');
+  document.getElementById('leadCapture').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ============================================
+// FORM SUBMIT
+// ============================================
+function handleSubmit(e) {
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById('fname');
+  const email = document.getElementById('femail');
+  const phone = document.getElementById('fphone');
+  const consentEl = document.getElementById('consent');
+
+  // Reset
+  document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
+  if (!name.value.trim() || name.value.trim().length < 2) {
+    name.closest('.form-group').classList.add('has-error'); valid = false;
+  }
+  if (!email.value.trim() || !email.value.includes('@') || !email.value.includes('.')) {
+    email.closest('.form-group').classList.add('has-error'); valid = false;
+  }
+  // Phone optional: only validate if provided
+  if (phone.value.trim() && !/^[+]?[\d\s\-]{9,15}$/.test(phone.value.trim())) {
+    phone.closest('.form-group').classList.add('has-error'); valid = false;
+  }
+  if (!consentEl.checked) { valid = false; }
+
+  if (!valid) return false;
+
+  // Collect all data
+  const leadData = {
+    name: name.value.trim(),
+    email: email.value.trim(),
+    phone: phone.value.trim(),
+    answers: answers,
+    variant: calculateVariant(),
+    timestamp: new Date().toISOString()
+  };
+
+  console.log('LEAD DATA:', leadData);
+  // Here: send to Mailerlite / webhook / etc.
+
+  showResult();
+  return false;
+}
+
+// ============================================
+// RESULT LOGIC — 4 VARIANTS (A/B/C/D)
+// ============================================
+function calculateVariant() {
+  const hasKomornik = answers[4] === 'komornik';
+  const hasWezwanie = answers[4] === 'wezwanie';
+  const highDebt = ['200k-500k', 'pow500k'].includes(answers[2]);
+  const mediumDebt = answers[2] === '50k-200k';
+  const lowDebt = answers[2] === 'do50k';
+
+  const assetsToProtect = answers[5] || [];
+  const hasPropertyAssets = assetsToProtect.some(v =>
+    ['mieszkanie', 'samochod', 'firma'].includes(v)
+  );
+
+  // Variant A (Red — Hot): Bailiff + high debt + no significant assets
+  if (hasKomornik && highDebt && !hasPropertyAssets) return 'A';
+
+  // Variant B (Orange — Hot): Bailiff + high debt + assets to protect
+  if (hasKomornik && highDebt && hasPropertyAssets) return 'B';
+
+  // Variant A also: Bailiff + medium debt
+  if (hasKomornik && (mediumDebt || highDebt)) return 'A';
+
+  // Variant B: Wezwanie + high debt + assets
+  if (hasWezwanie && highDebt) return hasPropertyAssets ? 'B' : 'A';
+
+  // Variant C (Yellow — Warm): No bailiff + medium/high debt
+  if ((mediumDebt && !hasKomornik) || (hasWezwanie && mediumDebt)) return 'C';
+  if (highDebt && !hasKomornik && !hasWezwanie) return 'C';
+
+  // Variant D (Green — Cold): Low debt + no pressure
+  return 'D';
+}
+
+function showResult() {
+  document.getElementById('leadCapture').classList.remove('active');
+  document.getElementById('quizHeader').style.display = 'none';
+
+  const card = document.getElementById('resultCard');
+  const badge = document.getElementById('resultBadge');
+  const title = document.getElementById('resultTitle');
+  const desc = document.getElementById('resultDesc');
+  const desc2 = document.getElementById('resultDesc2');
+  const reco = document.getElementById('resultReco');
+  const cta = document.getElementById('resultCTA');
+  const altCta = document.getElementById('resultAltCTA');
+  const proofQuote = document.getElementById('resultProofQuote');
+  const proofCite = document.getElementById('resultProofCite');
+
+  const variant = calculateVariant();
+
+  // Reset
+  card.className = 'result-card';
+  desc2.style.display = 'none';
+  altCta.style.display = 'none';
+
+  if (variant === 'A') {
+    card.classList.add('hot-a');
+    badge.textContent = 'Wymaga szybkiego działania';
+    title.textContent = 'Twoja sytuacja jest poważna — ale ma konkretne wyjście.';
+    desc.textContent = 'Komornik już działa, dług jest wysoki i nie masz majątku, który wymaga skomplikowanej ochrony. To brzmi przerażająco, ale w praktyce oznacza jedno: masz bardzo dobrą szansę na szybkie i czyste wyjście z całej tej sytuacji przez upadłość konsumencką.';
+    desc2.textContent = 'Upadłość konsumencka pozwala legalnie umorzyć długi i — co ważne — zatrzymuje komornika. Nie „zamraża" problemu. Rozwiązuje go.';
+    desc2.style.display = 'block';
+    reco.textContent = 'Nie czekaj. Każdy tydzień to kolejne odsetki i nowe koszty komornicze. Umów bezpłatną rozmowę — 15 minut, zero zobowiązań — i dowiedz się, co można zrobić konkretnie w Twoim przypadku.';
+    cta.textContent = 'Umów bezpłatną rozmowę — 15 minut';
+    cta.href = '#';
+    proofQuote.textContent = '„Myślałem, że to bez wyjścia. Pół roku po złożeniu wniosku — komornik zniknął, długi umorzone. Żałuję tylko, że nie zadzwoniłem wcześniej."';
+    proofCite.textContent = '— Marek W., były klient kancelarii';
+  }
+  else if (variant === 'B') {
+    card.classList.add('hot-b');
+    badge.textContent = 'Twój majątek jest zagrożony';
+    title.textContent = 'Możesz chronić swoje mieszkanie. Ale trzeba działać teraz.';
+    desc.textContent = 'Komornik działa, dług jest duży — i masz coś, na czym Ci zależy: mieszkanie, auto, dorobek. To właśnie te sytuacje wymagają przemyślanej strategii, bo przy upadłości konsumenckiej szczegóły naprawdę mają znaczenie.';
+    desc2.textContent = 'Dobra wiadomość jest taka: upadłość konsumencka nie oznacza automatycznej utraty wszystkiego. Zależy to od wielu czynników — i właśnie dlatego potrzebujesz kogoś, kto to dla Ciebie przeanalizuje, zanim cokolwiek się stanie.';
+    desc2.style.display = 'block';
+    reco.textContent = 'Każdy dzień zwłoki to mniejsze pole manewru. Umów rozmowę z doradcą — sprawdzimy razem, co da się uchronić oraz jak to zrobić w Twoim przypadku.';
+    cta.textContent = 'Umów rozmowę z doradcą — bezpłatnie';
+    cta.href = '#';
+    proofQuote.textContent = '„Bałam się, że stracę mieszkanie. Zostało przy mnie. Długi umorzone. Gdybym zaczekała jeszcze miesiąc, sytuacja wyglądałaby zupełnie inaczej."';
+    proofCite.textContent = '— Anna K., była klientka kancelarii';
+  }
+  else if (variant === 'C') {
+    card.classList.add('warm');
+    badge.textContent = 'Masz jeszcze czas';
+    title.textContent = 'Nie ma jeszcze komornika — i to jest Twoja przewaga.';
+    desc.textContent = 'Jesteś w momencie, kiedy jeszcze możesz działać z wyprzedzeniem. Brak komornika oznacza więcej czasu i więcej opcji — ale to się zmienia szybciej, niż się wydaje.';
+    desc2.textContent = 'Osoby, które zgłaszają się do nas zanim sprawa trafi do komornika, mają znacznie więcej możliwości. Możemy razem przejrzeć sytuację spokojnie i zaplanować najlepsze wyjście.';
+    desc2.style.display = 'block';
+    reco.textContent = 'Wyślemy Ci bezpłatny raport na maila z wyjaśnieniem, jakie masz opcje w Twojej konkretnej sytuacji. Bez presji. Jeśli po lekturze będziesz chciał/a porozmawiać — jesteśmy tutaj.';
+    cta.textContent = 'Wyślij mi bezpłatny raport';
+    cta.href = '#';
+    altCta.textContent = 'Wolisz porozmawiać już teraz? → Umów bezpłatną konsultację';
+    altCta.href = '#';
+    altCta.style.display = 'block';
+    proofQuote.textContent = '„Zgłosiłem się, zanim pojawiły się większe problemy. Wyszedłem z długów bez utraty czegokolwiek. Polecam nie czekać."';
+    proofCite.textContent = '— Tomasz B., były klient kancelarii';
+  }
+  else {
+    card.classList.add('cold');
+    badge.textContent = 'Sytuacja pod kontrolą';
+    title.textContent = 'Twoja sytuacja nie jest jeszcze kryzysem. Warto to zmienić zanim się nim stanie.';
+    desc.textContent = 'Na razie nie ma komornika, dług jest do opanowania — i dobrze. Ale długi rzadko znikają same. Warto wiedzieć, jakie masz opcje i co robić, jeśli sytuacja zacznie się pogarszać.';
+    desc2.textContent = 'Prześlemy Ci materiały, które wyjaśniają w ludzkim języku, jak działa upadłość konsumencka, kiedy warto o niej myśleć i co możesz zrobić już teraz — całkowicie bezpłatnie.';
+    desc2.style.display = 'block';
+    reco.textContent = 'Zapisz się na nasz bezpłatny newsletter — raz w tygodniu kilka zdań o tym, jak wychodzić z trudnych sytuacji finansowych. Bez straszenia, bez spamu.';
+    cta.textContent = 'Wyślij mi materiały bezpłatnie';
+    cta.href = '#';
+    altCta.textContent = 'Masz pytania? → Napisz do nas';
+    altCta.href = '#';
+    altCta.style.display = 'block';
+    proofQuote.textContent = '„Zacząłem czytać te maile, kiedy miałem jeszcze mały dług. Kiedy rok później sytuacja się skomplikowała — już wiedziałem, co robić i do kogo dzwonić."';
+    proofCite.textContent = '— Piotr M., były klient kancelarii';
+  }
+
+  document.getElementById('resultScreen').classList.add('active');
+  document.getElementById('resultScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ============================================
+// SMOOTH SCROLL
+// ============================================
+document.getElementById('startQuiz').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+});
+document.getElementById('ctaBottom').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+});
+
+// ============================================
+// FAQ ACCORDION
+// ============================================
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all others
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      if (openItem !== item) {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Toggle current
+    item.classList.toggle('open', !isOpen);
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
+// ============================================
+// EXIT-INTENT POPUP
+// ============================================
+let popupShown = false;
+let quizStarted = false;
+let pageLoadTime = Date.now();
+
+document.querySelectorAll('.option').forEach(o => {
+  o.addEventListener('click', () => { quizStarted = true; });
+});
+
+document.addEventListener('mouseout', function(e) {
+  const elapsed = Date.now() - pageLoadTime;
+  if (e.clientY < 5 && !popupShown && !quizStarted && elapsed > 10000 &&
+      !document.getElementById('resultScreen').classList.contains('active')) {
+    document.getElementById('popupOverlay').classList.add('visible');
+    popupShown = true;
+    // Focus trap
+    document.getElementById('popupEmail').focus();
+  }
+});
+
+// Close on overlay click
+document.getElementById('popupOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('popupOverlay').classList.contains('visible')) {
+    closePopup();
+  }
+});
+
+function closePopup() {
+  document.getElementById('popupOverlay').classList.remove('visible');
+}
+
+function submitPopup() {
+  const email = document.getElementById('popupEmail').value;
+  if (email && email.includes('@') && email.includes('.')) {
+    console.log('POPUP LEAD:', email);
+    closePopup();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Ensure first next button state
+updateNextBtn(1);
+
+// ============================================
+// SCROLL REVEAL (IntersectionObserver)
+// ============================================
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================
+// METRIC COUNT-UP
+// ============================================
+const metricObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 600;
+      const startTime = performance.now();
+
+      function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * eased);
+        el.textContent = current.toLocaleString('pl-PL') + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      }
+      requestAnimationFrame(animate);
+      metricObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.metric-value[data-target]').forEach(el => metricObserver.observe(el));
+
+// ============================================
+// MOBILE STICKY CTA BAR
+// ============================================
+if (window.innerWidth < 768) {
+  const mobileCta = document.getElementById('mobileCta');
+  const quizSection = document.getElementById('quiz');
+  const heroSection = document.getElementById('hero');
+
+  const mobileObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Show mobile CTA when hero is out of view AND quiz is not in view
+      if (!entry.isIntersecting && entry.target === heroSection && !quizStarted) {
+        mobileCta.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+
+  const quizObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mobileCta.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  mobileObserver.observe(heroSection);
+  quizObserver.observe(quizSection);
+
+  // Also hide on quiz start
+  document.querySelectorAll('.option').forEach(o => {
+    o.addEventListener('click', () => {
+      mobileCta.classList.remove('visible');
+    });
+  });
+}
+
+// Mobile CTA link
+const mobileCta = document.querySelector('.mobile-cta-bar a');
+if (mobileCta) {
+  mobileCta.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+  });
+}
+</script>
+</body>
+</html>
